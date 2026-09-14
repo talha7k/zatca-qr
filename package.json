@@ -1,0 +1,93 @@
+{
+  "name": "@talha7k/zatca-qr",
+  "version": "1.3.0",
+  "description": "Browser-first ZATCA QR code TLV encoding for Saudi Arabia e-invoicing. Zero dependencies, Phase 1 + Phase 2 compliant.",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "files": [
+    "dist/",
+    "!dist/**/*.map"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build",
+    "clean": "rm -rf dist",
+    "lint": "eslint ."
+  },
+  "peerDependencies": {
+    "qrcode": "^1.5.0 || ^2.0.0"
+  },
+  "peerDependenciesMeta": {
+    "qrcode": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.5.1",
+    "@types/qrcode": "^1.5.6",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.10.0",
+    "qrcode": "^1.5.4",
+    "tsx": "^4.23.13",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-eslint": "^8.70.0"
+  },
+  "keywords": [
+    "zatca",
+    "zatca-qr",
+    "e-invoicing",
+    "saudi-arabia",
+    "fatoora",
+    "tlv",
+    "ber-tlv",
+    "phase1",
+    "phase2",
+    "qr-code",
+    "ksa",
+    "vat",
+    "invoice",
+    "tax",
+    "browser",
+    "isomorphic",
+    "typescript"
+  ],
+  "author": {
+    "name": "talha7k",
+    "email": "talha7k@gmail.com",
+    "url": "https://github.com/talha7k"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talha7k/zatca-qr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/talha7k/zatca-qr/issues"
+  },
+  "homepage": "https://github.com/talha7k/zatca-qr#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/talha7k"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}
