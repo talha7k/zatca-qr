@@ -18,8 +18,8 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json",
-    "dev": "tsc -p tsconfig.json --watch",
+    "build": "node init && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json",
+    "dev": "node init && tsc -p tsconfig.json --watch",
     "test": "node --import tsx --test tests/*.test.ts",
     "type-check": "tsc --noEmit",
     "prepublishOnly": "npm run build",
